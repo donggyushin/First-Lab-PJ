@@ -5,6 +5,7 @@ import LoginComponent from "./routes/login";
 import SignupAgreement from "./routes/signUp/agreement";
 import Authentication from "./routes/signUp/authentication";
 import PersonalInformationForm from "./routes/signUp/form";
+import Popup from "./routes/popup";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signup/agreement" exact component={SignupAgreement} />
         <Route path="/signup/authentication" exact component={Authentication} />
         <Route path="/signup/form" exact component={PersonalInformationForm} />
+        <Route path="/popup" exact component={Popup} />
         <Route component={WebUserInterface} />
       </Switch>
     </Router>
