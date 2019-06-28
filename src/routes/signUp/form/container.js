@@ -32,8 +32,12 @@ class PersonalInformationFormContainer extends React.Component {
       doubleCheckButtonTapped,
       handleCancel,
       handleOk,
-      openPopup
+      openPopup,
+      openJusoPopup
     } = this;
+    const { zipcode, fullAddress } = this.props;
+    console.log("asdasdasd");
+    console.log(this.props.zipcode, fullAddress);
     return (
       <Presenter
         gender={gender}
@@ -51,6 +55,9 @@ class PersonalInformationFormContainer extends React.Component {
         visible={visible}
         openPopup={openPopup}
         organization={organization}
+        openJusoPopup={openJusoPopup}
+        zipcode={zipcode}
+        fullAddress={fullAddress}
       />
     );
   }
@@ -138,8 +145,11 @@ class PersonalInformationFormContainer extends React.Component {
   };
 
   openPopup = () => {
-    // width not working
-    window.open("/popup", "blank", "location=0, width=500, height=500");
+    window.open("/popup", "pop", "location=0, width=500, height=500");
+  };
+
+  openJusoPopup = () => {
+    window.open("/popup/juso", "pop", "width=700, height=450");
   };
 }
 

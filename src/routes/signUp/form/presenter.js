@@ -85,7 +85,10 @@ function PersonalInformationForm({
   handleOk,
   visible,
   openPopup,
-  organization
+  organization,
+  openJusoPopup,
+  zipcode,
+  fullAddress
 }) {
   return (
     <Container>
@@ -234,6 +237,34 @@ function PersonalInformationForm({
               있습니다.
             </Row1>
           </Column>
+        </Row2>
+        <EightyPercentView>
+          <Divider />
+        </EightyPercentView>
+        <Row2>
+          <Row1>
+            <Column>
+              <NormalText>우편번호</NormalText>
+              <Margin />
+              <Row1>
+                <div style={{ marginRight: 20 }}>
+                  <Button onClick={openJusoPopup} type="primary">
+                    우편번호검색
+                  </Button>
+                </div>
+                <Input contentEditable={false} value={zipcode} />
+              </Row1>
+            </Column>
+            <Column>
+              <NormalText>주소</NormalText>
+              <Margin />
+              <Row1>
+                <div style={{ width: 400 }}>
+                  <Input contentEditable={false} value={fullAddress} />
+                </div>
+              </Row1>
+            </Column>
+          </Row1>
         </Row2>
       </Box>
       <Modal
