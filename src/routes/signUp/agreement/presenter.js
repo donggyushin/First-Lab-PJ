@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { Checkbox, Button, Icon } from "antd";
+import { Checkbox, Button, Icon, Modal } from "antd";
 
 const Container = styled.div``;
 const Text = styled.div``;
 
-function SignUpAgreement({ checkBoxTapped }) {
+function SignUpAgreement({
+  checkBoxTapped,
+  forwardButtonTapped,
+  handleCancel,
+  handleOk,
+  visiable
+}) {
   return (
     <Container>
       <Text>약관동의 페이지</Text>
@@ -18,10 +24,20 @@ function SignUpAgreement({ checkBoxTapped }) {
       <Checkbox name="3" onChange={checkBoxTapped}>
         3
       </Checkbox>
-      <Button type="primary">
+      <Button onClick={forwardButtonTapped} type="primary">
         Forward
         <Icon type="right" />
       </Button>
+      <Modal
+        title="Basic Modal"
+        visible={visiable}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
     </Container>
   );
 }

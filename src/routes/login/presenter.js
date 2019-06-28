@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Colors from "../../constants/colors";
 import "antd/dist/antd.css";
 import { Input, Button } from "antd";
 import "./style.css";
@@ -30,13 +29,6 @@ const Card = styled.div`
   flex-direction: column;
 `;
 
-const LoginText = styled.div`
-  text-align: center;
-  font-size: 30px;
-  font-weight: 900;
-  margin-bottom: 30px;
-`;
-
 const SmallText = styled.div`
   margin-bottom: 10px;
   margin-top: 23px;
@@ -46,8 +38,6 @@ const SmallTextCursorPointer = styled.div`
   margin-bottom: 10px;
   cursor: pointer;
 `;
-
-const LoginButton = styled.div``;
 
 function LoginComponent(props) {
   return (
