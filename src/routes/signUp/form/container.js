@@ -11,8 +11,14 @@ class PersonalInformationFormContainer extends React.Component {
     password1: "",
     password2: "",
     visible: false,
-    organization: 1
+    organization: 1,
+    zipcode: "",
+    fullAddress: ""
   };
+
+  componentDidMount() {
+    window.addEventListener("message", this.receiveMessage, false);
+  }
 
   render() {
     const {
@@ -35,9 +41,8 @@ class PersonalInformationFormContainer extends React.Component {
       openPopup,
       openJusoPopup
     } = this;
-    const { zipcode, fullAddress } = this.props;
-    console.log("asdasdasd");
-    console.log(this.props.zipcode, fullAddress);
+    const { zipcode, fullAddress } = this.state;
+
     return (
       <Presenter
         gender={gender}
@@ -150,6 +155,15 @@ class PersonalInformationFormContainer extends React.Component {
 
   openJusoPopup = () => {
     window.open("/popup/juso", "pop", "width=700, height=450");
+  };
+
+  receiveMessage = event => {
+    const { zonecode, fullAddress } = event.data;
+    if (zonecode == null || fullAddress == null) return;
+    this.setState({
+      zipcode: zonecode,
+      fullAddress
+    });
   };
 }
 

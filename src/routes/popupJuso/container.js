@@ -21,12 +21,22 @@ class Postcode extends React.Component {
       zonecode,
       fullAddress
     };
+    window.opener.postMessage(result);
     console.log(this.props.changeFullAddress);
     this.props.changeFullAddress(result);
+    window.close();
   };
+
+  componentDidMount() {
+    window.addEventListener("message", this.receiveMessage, false);
+  }
 
   render() {
     return <DaumPostcode onComplete={this.handleAddress} />;
+  }
+
+  receiveMessage(event) {
+    console.log(event.data);
   }
 }
 
