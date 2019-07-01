@@ -1,0 +1,12 @@
+#root > div > div > div:nth-child(2) > div > div {
+  margin-top: 70px;
+  margin-bottom: 80px;
+}
+
+#root > div > div > div.sc-htoDjs.juvQWM > div:nth-child(1) {
+  margin-right: 40px;
+}
+
+#root > div > div > div.sc-htoDjs.juvQWM > div:nth-child(2) > div > div {
+  margin-left: 40px;
+}

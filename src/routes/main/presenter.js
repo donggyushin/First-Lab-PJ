@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import NormalUserInterface from "../../components/normalUserInterface";
 
 const Container = styled.div``;
 const Text = styled.div``;
 
-function MainWebUserInterface(props) {
+function MainWebUserInterface({ userState }) {
   return (
-    <Container>
-      <Text>Main Web user interface</Text>
-    </Container>
+    <Container>{userState === "normal" && <NormalUserInterface />}</Container>
   );
 }
 

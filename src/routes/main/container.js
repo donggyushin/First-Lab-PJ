@@ -1,10 +1,14 @@
-import React from 'react';
-import Presenter from './presenter'
+import React from "react";
+import Presenter from "./presenter";
 
 class Container extends React.Component {
-    render() {
-        return <Presenter / >
-    }
+  state = {
+    userState: "normal"
+  };
+  render() {
+    const { userState } = this.state;
+    return <Presenter userState={userState} />;
+  }
 }
 
-export default Container
+export default Container;

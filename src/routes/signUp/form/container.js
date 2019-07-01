@@ -13,7 +13,18 @@ class PersonalInformationFormContainer extends React.Component {
     visible: false,
     organization: 1,
     zipcode: "",
-    fullAddress: ""
+    fullAddress: "",
+    address: "",
+    cellphoneNumber: "",
+    phoneNumber: "",
+    faxNumber: "",
+    typeOfUser: "전체",
+    role: "선택",
+    department: "",
+    position: "",
+    responsibility: "",
+    recommendId: "",
+    birthDay: ""
   };
 
   componentDidMount() {
@@ -30,7 +41,18 @@ class PersonalInformationFormContainer extends React.Component {
       password1,
       password2,
       visible,
-      organization
+      organization,
+      cellphoneNumber,
+      phoneNumber,
+      faxNumber,
+      typeOfUser,
+      role,
+      department,
+      position,
+      responsibility,
+      recommendId,
+      address,
+      birthDay
     } = this.state;
     const {
       radioChange,
@@ -39,7 +61,8 @@ class PersonalInformationFormContainer extends React.Component {
       handleCancel,
       handleOk,
       openPopup,
-      openJusoPopup
+      openJusoPopup,
+      dateChange
     } = this;
     const { zipcode, fullAddress } = this.state;
 
@@ -63,6 +86,18 @@ class PersonalInformationFormContainer extends React.Component {
         openJusoPopup={openJusoPopup}
         zipcode={zipcode}
         fullAddress={fullAddress}
+        cellphoneNumber={cellphoneNumber}
+        phoneNumber={phoneNumber}
+        faxNumber={faxNumber}
+        typeOfUser={typeOfUser}
+        role={role}
+        department={department}
+        position={position}
+        responsibility={responsibility}
+        recommendId={recommendId}
+        address={address}
+        dateChange={dateChange}
+        birthDay={birthDay}
       />
     );
   }
@@ -85,6 +120,7 @@ class PersonalInformationFormContainer extends React.Component {
         this.setState({
           organization: value
         });
+        break;
       default:
         break;
     }
@@ -120,6 +156,57 @@ class PersonalInformationFormContainer extends React.Component {
           password2: value
         });
         break;
+      case "cellphone":
+        this.setState({
+          cellphoneNumber: value
+        });
+        break;
+      case "phone":
+        this.setState({
+          phoneNumber: value
+        });
+        break;
+      case "fax":
+        this.setState({
+          faxNumber: value
+        });
+        break;
+      case "typeOfUser":
+        this.setState({
+          typeOfUser: value
+        });
+        break;
+      case "role":
+        this.setState({
+          role: value
+        });
+        break;
+      case "department":
+        this.setState({
+          department: value
+        });
+        break;
+      case "position":
+        this.setState({
+          position: value
+        });
+        break;
+      case "responsibility":
+        this.setState({
+          responsibility: value
+        });
+        break;
+      case "recommendId":
+        this.setState({
+          recommendId: value
+        });
+        break;
+      case "address":
+        this.setState({
+          address: value
+        });
+        break;
+
       default:
         break;
     }
@@ -164,6 +251,13 @@ class PersonalInformationFormContainer extends React.Component {
       zipcode: zonecode,
       fullAddress
     });
+  };
+
+  dateChange = event => {
+    this.setState({
+      birthDay: event
+    });
+    console.log(this.state.birthDay);
   };
 }
 
