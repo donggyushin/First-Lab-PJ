@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import RegistrationNumSearchComponent from "../registrationNumSearch";
-import ResearcherInfoRegistration from "../researcherInfoRegistration";
-import ModifyResearcherInfo from "../modifyResearcherInfo";
+import LinkCard from "../linkCard";
 import "./style.css";
 
 const Container = styled.div`
@@ -14,15 +12,11 @@ const Container = styled.div`
 `;
 const BigText = styled.div`
   font-size: 37px;
+  color: #34495e;
 `;
 
 const Row = styled.div`
   display: flex;
-`;
-
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
 `;
 
 const NormalUserInterface = () => {
@@ -32,22 +26,24 @@ const NormalUserInterface = () => {
         <BigText>국가 R&D 정보 공유 시스템</BigText>
       </div>
       <div>
-        <Row>
-          <RegistrationNumSearchComponent />
+        <Row
+          style={{
+            marginTop: 100
+          }}
+        >
+          <LinkCard text={"과학기술인등록번호 조회"} iconType={"fas fa-user"} />
+          <div
+            style={{
+              marginRight: 20,
+              marginLeft: 20,
+              marginTop: 60
+            }}
+          >
+            <LinkCard text={"연구자 정보 등록"} iconType={"fas fa-user-plus"} />
+          </div>
+          <LinkCard text={"연구자 정보 수정"} iconType={"fas fa-user-edit"} />
         </Row>
       </div>
-      <Row>
-        <div>
-          <Column>
-            <ResearcherInfoRegistration />
-          </Column>
-        </div>
-        <div>
-          <Column>
-            <ModifyResearcherInfo />
-          </Column>
-        </div>
-      </Row>
     </Container>
   );
 };
