@@ -3,12 +3,13 @@ import styled from "styled-components";
 
 const Container = styled.div``;
 const Text = styled.div``;
-const ResearcherInfoRegistration = () => {
+
+const Presenter = () => {
   return (
     <Container>
-      <Text>ResearcherInfoRegistration</Text>
+      <Text>navi</Text>
     </Container>
   );
 };
 
-export default ResearcherInfoRegistration;
+export default Presenter;

@@ -4,6 +4,7 @@ const QUINCY_JELLY = "#f0932b";
 const TURBO = "#f9ca24";
 const CARMINE_PINK = "#eb4d4b";
 const EMERALD = "#2ecc71";
+const CHARCOLE = "#34495e";
 
 const Colors = {
   backgroundColor: BACKGROUND_COLOR,
@@ -11,7 +12,8 @@ const Colors = {
   deepOrange: QUINCY_JELLY,
   lightOrange: TURBO,
   redText: CARMINE_PINK,
-  greenText: EMERALD
+  greenText: EMERALD,
+  charcoleText: CHARCOLE
 };
 
 export default Colors;

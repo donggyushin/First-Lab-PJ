@@ -108,7 +108,10 @@ function PersonalInformationForm({
   recommendId,
   address,
   dateChange,
-  birthDay
+  birthDay,
+  email,
+  integrityCheck,
+  selectChange
 }) {
   return (
     <Container>
@@ -217,7 +220,13 @@ function PersonalInformationForm({
             <NormalText>이메일</NormalText>
             <Margin />
             <div style={{ width: "350px" }}>
-              <Input placeholder="email@email" type="email" />
+              <Input
+                value={email}
+                onChange={inputChange}
+                name={"email"}
+                placeholder="email@email"
+                type="email"
+              />
               <RedTinyText> * 가입완료 후 인증 메일이 발송됩니다. </RedTinyText>
             </div>
             <Margin />
@@ -382,6 +391,7 @@ function PersonalInformationForm({
                 name={"typeOfUser"}
                 style={{ width: 250 }}
                 defaultValue={typeOfUser}
+                onChange={selectChange}
               >
                 <Option value="전체">전체</Option>
                 <Option value="연구자(대학,출연(연),연구소 등">
@@ -480,7 +490,7 @@ function PersonalInformationForm({
             marginTop: 80
           }}
         >
-          <Button size="large" type="primary">
+          <Button onClick={integrityCheck} size="large" type="primary">
             Forward
             <Icon type="right" />
           </Button>

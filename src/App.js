@@ -7,6 +7,7 @@ import Authentication from "./routes/signUp/authentication";
 import PersonalInformationForm from "./routes/signUp/form";
 import Popup from "./routes/popup";
 import PopupJuso from "./routes/popupJuso";
+import { ToastContainer } from "react-toastify";
 
 class AppContainer extends React.Component {
   state = {
@@ -63,6 +64,7 @@ function App({ zipcode, fullAddress, changeFullAddress }) {
         />
         <Route component={WebUserInterface} />
       </Switch>
+      <ToastContainer />
     </Router>
   );
 }

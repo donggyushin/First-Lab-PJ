@@ -1,5 +1,7 @@
 import React from "react";
 import Presenter from "./presenter";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class PersonalInformationFormContainer extends React.Component {
   state = {
@@ -24,7 +26,9 @@ class PersonalInformationFormContainer extends React.Component {
     position: "",
     responsibility: "",
     recommendId: "",
-    birthDay: ""
+    birthDay: new Date(),
+    email: "",
+    errorMessages: []
   };
 
   componentDidMount() {
@@ -52,7 +56,8 @@ class PersonalInformationFormContainer extends React.Component {
       responsibility,
       recommendId,
       address,
-      birthDay
+      birthDay,
+      email
     } = this.state;
     const {
       radioChange,
@@ -62,7 +67,10 @@ class PersonalInformationFormContainer extends React.Component {
       handleOk,
       openPopup,
       openJusoPopup,
-      dateChange
+      dateChange,
+      integrityCheck,
+      errorMessageClicked,
+      selectChange
     } = this;
     const { zipcode, fullAddress } = this.state;
 
@@ -98,6 +106,10 @@ class PersonalInformationFormContainer extends React.Component {
         address={address}
         dateChange={dateChange}
         birthDay={birthDay}
+        email={email}
+        integrityCheck={integrityCheck}
+        errorMessageClicked={errorMessageClicked}
+        selectChange={selectChange}
       />
     );
   }
@@ -206,7 +218,11 @@ class PersonalInformationFormContainer extends React.Component {
           address: value
         });
         break;
-
+      case "email":
+        this.setState({
+          email: value
+        });
+        break;
       default:
         break;
     }
@@ -258,6 +274,83 @@ class PersonalInformationFormContainer extends React.Component {
       birthDay: event
     });
     console.log(this.state.birthDay);
+  };
+  selectChange = event => {
+    this.setState({
+      typeOfUser: event
+    });
+  };
+
+  integrityCheck = () => {
+    const {
+      username,
+      userID,
+      password1,
+      password2,
+      zipcode,
+      fullAddress,
+      cellphoneNumber,
+      phoneNumber,
+      typeOfUser,
+      birthDay,
+      email
+    } = this.state;
+
+    // Check if there is any empty value
+    if (
+      userID === "" ||
+      username === "" ||
+      password1 === "" ||
+      password2 === "" ||
+      zipcode === "" ||
+      fullAddress === "" ||
+      typeOfUser === "전체" ||
+      email === ""
+    ) {
+      console.log(
+        "userid",
+        userID,
+        "username",
+        username,
+        "password1",
+        password1,
+        "password2",
+        password2,
+        "zipcode",
+        zipcode,
+        "fulladdress",
+        fullAddress,
+        "typeofuser",
+        typeOfUser,
+        "email",
+        email
+      );
+      toast.warn("선택입력이 아닌 곳 중 입력이 안된 곳이 있습니다.", {
+        position: toast.POSITION.BOTTOM_CENTER
+      });
+      return;
+    } else if (cellphoneNumber === "" && phoneNumber === "") {
+      toast.warn("핸드폰 번호와 일반 전화번호 중 한 군데는 입력을 해주세요.", {
+        position: toast.POSITION.BOTTOM_CENTER
+      });
+      return;
+    } else if (!birthDay instanceof Date) {
+      toast.warn("생년월일 입력양식이 잘못되었습니다.", {
+        position: toast.POSITION.BOTTOM_CENTER
+      });
+      return;
+    }
+
+    // Check password1 === password2
+    if (password1 !== password2) {
+      toast.warn("비밀번호를 제대로 입력했나 확인해주세요. ", {
+        position: toast.POSITION.BOTTOM_CENTER
+      });
+      return;
+    }
+    // then you can go next step
+
+    console.log("next");
   };
 }
 

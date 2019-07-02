@@ -3,10 +3,12 @@ import Presenter from "./presenter";
 
 class Container extends React.Component {
   state = {
-    userState: "normal"
+    userState: "agencyAdmin"
   };
   render() {
-    const { userState } = this.state;
+    const userType = ["normal", "agencyAdmin", "intergrated"];
+    let { userState } = this.state.userState;
+    userState = userType[2];
     return <Presenter userState={userState} />;
   }
 }
