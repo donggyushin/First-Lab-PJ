@@ -18,6 +18,11 @@ const Row = styled.div`
   display: flex;
 `;
 
+const Text = styled.div`
+  color: #34495e;
+  font-weight: 600;
+`;
+
 const Presenter = () => {
   return (
     <Container>
@@ -31,24 +36,25 @@ const Presenter = () => {
       </BigText>
       <Row
         style={{
-          marginTop: 80
+          marginTop: 100
         }}
       >
         <div
           style={{
-            marginRight: 10
+            marginRight: 15
           }}
         >
           <LinkCard text={"기관 관리자 추가"} iconType={"fas fa-user-plus"} />
         </div>
         <div
           style={{
-            marginLeft: 10
+            marginLeft: 15
           }}
         >
           <LinkCard text={"기관 관리자 삭제"} iconType={"fas fa-user-minus"} />
         </div>
       </Row>
+      <Text>통합 관리자 인터페이스</Text>
     </Container>
   );
 };

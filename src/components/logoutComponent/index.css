@@ -1,0 +1,4 @@
+.LogoutComponentContainer:hover > div {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}

@@ -8,7 +8,7 @@ class Container extends React.Component {
   render() {
     const userType = ["normal", "agencyAdmin", "intergrated"];
     let { userState } = this.state.userState;
-    userState = userType[2];
+    userState = userType[1];
     return <Presenter userState={userState} />;
   }
 }

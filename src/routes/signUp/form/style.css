@@ -23,3 +23,16 @@
   > button {
   display: none;
 }
+
+#root
+  > div.sc-jKJlTe.iKWBsF
+  > div
+  > div:nth-child(7)
+  > div:nth-child(2)
+  > div.opuscapita_date-input.form-control
+  > div.opuscapita_date-input__picker-container
+  > div
+  > div.opuscapita_day-picker__footer
+  > button {
+  display: none;
+}

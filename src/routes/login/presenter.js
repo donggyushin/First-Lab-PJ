@@ -3,6 +3,8 @@ import styled from "styled-components";
 import "antd/dist/antd.css";
 import { Input, Button } from "antd";
 import "./style.css";
+import { Link } from "react-router-dom";
+import Colors from "../../constants/colors";
 
 const Container = styled.div`
   width: 100%;
@@ -37,6 +39,7 @@ const SmallText = styled.div`
 const SmallTextCursorPointer = styled.div`
   margin-bottom: 10px;
   cursor: pointer;
+  color: ${Colors.charcoleText};
 `;
 
 function LoginComponent(props) {
@@ -50,13 +53,22 @@ function LoginComponent(props) {
         <Input allowClear />
         <SmallText>Password</SmallText>
         <Input.Password />
-        <SmallTextCursorPointer>
+        <SmallTextCursorPointer style={{ marginTop: 20, marginBottom: 10 }}>
           비밀번호를 잊어버리셨습니까?
         </SmallTextCursorPointer>
         <Button type="primary" icon="poweroff">
           Click me!
         </Button>
-        <SmallTextCursorPointer>Sign Up</SmallTextCursorPointer>
+        <Link to={"/signup/agreement"} style={{ textDecoration: "none" }}>
+          <SmallTextCursorPointer
+            style={{
+              textAlign: "center",
+              marginTop: 20
+            }}
+          >
+            Sign Up
+          </SmallTextCursorPointer>
+        </Link>
       </Card>
     </Container>
   );

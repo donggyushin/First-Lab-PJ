@@ -18,6 +18,11 @@ const Row = styled.div`
   display: flex;
 `;
 
+const Text = styled.div`
+  color: #34495e;
+  font-weight: 600;
+`;
+
 const AgencyAdminInterface = () => {
   return (
     <Container>
@@ -31,12 +36,31 @@ const AgencyAdminInterface = () => {
       </BigText>
       <Row
         style={{
-          marginTop: 230
+          marginTop: 200
         }}
       >
-        <LinkCard text={"과학기술인등록번호 조회"} iconType={"fas fa-user"} />
-        <LinkCard text={"연구자정보 조회"} iconType={"fas fa-id-card"} />
+        <div
+          style={{
+            marginTop: -87,
+            marginRight: 15
+          }}
+        >
+          <LinkCard
+            text={"과학기술인등록번호 조회"}
+            to={"/registration-number-lookup"}
+            iconType={"fas fa-user"}
+          />
+        </div>
+        <div
+          style={{
+            marginTop: -100,
+            marginLeft: 15
+          }}
+        >
+          <LinkCard text={"연구자정보 조회"} iconType={"fas fa-id-card"} />
+        </div>
       </Row>
+      <Text>기관 관리자 인터페이스</Text>
     </Container>
   );
 };
