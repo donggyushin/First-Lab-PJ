@@ -9,6 +9,7 @@ import Popup from "./routes/popup";
 import PopupJuso from "./routes/popupJuso";
 import LogoutButton from "./components/logoutComponent";
 import RegistrationNumberLookup from "./routes/registrationNumberLookUp";
+import ResearchInfoLookUp from "./routes/researcherInfoLookup";
 import { ToastContainer } from "react-toastify";
 
 class AppContainer extends React.Component {
@@ -78,6 +79,7 @@ const PrivateComponent = ({ logout, changeFullAddress }) => (
         path="/registration-number-lookup"
         component={RegistrationNumberLookup}
       />
+      <Route path="/researcher-info-lookup" component={ResearchInfoLookUp} />
       <Route component={WebUserInterface} />
     </Switch>
     <ToastContainer />

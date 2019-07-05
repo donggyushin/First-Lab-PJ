@@ -42,6 +42,7 @@ const Column = styled.div`
 const Row = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 const IconContainer = styled.div`
@@ -94,6 +95,15 @@ const Presenter = ({ iconLoading, enterIconLoading }) => (
               marginRight: 20
             }}
           />
+        </Row>
+        <Row>
+          <Text
+            style={{
+              width: 150
+            }}
+          >
+            성별
+          </Text>
           <Radio.Group
             style={{
               width: 200,
@@ -137,15 +147,19 @@ const Presenter = ({ iconLoading, enterIconLoading }) => (
             placeholder="- 없이 입력해주세요. "
           />
         </Row>
-        <Row>
+        <Row
+          style={{
+            justifyContent: "flex-end"
+          }}
+        >
           <Button
             icon="poweroff"
             loading={iconLoading}
             onClick={enterIconLoading}
             type={"primary"}
             style={{
-              width: "83%",
-              marginTop: 60
+              marginTop: 30,
+              marginRight: 40
             }}
           >
             Search

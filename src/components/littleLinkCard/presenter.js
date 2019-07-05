@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import styles from "./index.module.css";
+import styles from "./style.module.css";
 
 const Text = styled.div`
   color: #34495e;
@@ -9,7 +9,7 @@ const Text = styled.div`
   width: 150px;
 `;
 
-const LinkCard = ({ text, iconType, to }) => {
+const LittleLinkCard = ({ text, iconType, to }) => {
   return (
     <div className={styles.middle}>
       <a className={styles.btn} href={to}>
@@ -20,4 +20,4 @@ const LinkCard = ({ text, iconType, to }) => {
   );
 };
 
-export default LinkCard;
+export default LittleLinkCard;

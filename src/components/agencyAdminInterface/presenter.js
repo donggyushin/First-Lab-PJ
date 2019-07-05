@@ -57,7 +57,11 @@ const AgencyAdminInterface = () => {
             marginLeft: 15
           }}
         >
-          <LinkCard text={"연구자정보 조회"} iconType={"fas fa-id-card"} />
+          <LinkCard
+            text={"연구자정보 조회"}
+            to={"/researcher-info-lookup"}
+            iconType={"fas fa-id-card"}
+          />
         </div>
       </Row>
       <Text>기관 관리자 인터페이스</Text>
