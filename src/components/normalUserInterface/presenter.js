@@ -50,7 +50,11 @@ const NormalUserInterface = () => {
           >
             <LinkCard text={"연구자 정보 등록"} iconType={"fas fa-user-plus"} />
           </div>
-          <LinkCard text={"연구자 정보 수정"} iconType={"fas fa-user-edit"} />
+          <LinkCard
+            text={"연구자 정보 수정"}
+            to={"/researcher-info-edit"}
+            iconType={"fas fa-user-edit"}
+          />
         </Row>
       </div>
       <Text>일반 사용자 인터페이스</Text>

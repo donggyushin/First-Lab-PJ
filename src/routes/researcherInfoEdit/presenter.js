@@ -34,7 +34,7 @@ const Presenter = () => (
   <Container>
     <Card>
       <Column>
-        <BigCircleIcon text={"연구자 정보 조회"} iconType={"fas fa-id-card"} />
+        <BigCircleIcon text={"연구자 정보 수정"} iconType={"fas fa-id-card"} />
       </Column>
       <VerticalLine />
       <Column
@@ -48,21 +48,9 @@ const Presenter = () => (
             marginBottom: 40
           }}
         >
-          <LittleLinkCard
-            text={"기본 정보"}
-            to={"/info-search/basic"}
-            iconType={"fas fa-user"}
-          />
-          <LittleLinkCard
-            text={"학력 사항"}
-            to={"/info-search/degree"}
-            iconType={"fas fa-book"}
-          />
-          <LittleLinkCard
-            text={"경력 사항"}
-            to={"/info-search/career"}
-            iconType={"fas fa-briefcase"}
-          />
+          <LittleLinkCard text={"기본 정보"} iconType={"fas fa-user"} />
+          <LittleLinkCard text={"학력 사항"} iconType={"fas fa-book"} />
+          <LittleLinkCard text={"경력 사항"} iconType={"fas fa-briefcase"} />
         </Row>
         <Row
           style={{
@@ -70,17 +58,12 @@ const Presenter = () => (
           }}
         >
           <div>
-            <LittleLinkCard
-              text={"논문 실적"}
-              to={"/info-search/paper"}
-              iconType={"fas fa-scroll"}
-            />
+            <LittleLinkCard text={"논문 실적"} iconType={"fas fa-scroll"} />
           </div>
           <div>
             <LittleLinkCard
               text={"지적 재산권 실적"}
               iconType={"fas fa-coins"}
-              to={"/info-search/property"}
             />
           </div>
         </Row>

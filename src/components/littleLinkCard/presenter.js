@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 const Text = styled.div`
   color: #34495e;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 13px;
   width: 150px;
 `;
 
